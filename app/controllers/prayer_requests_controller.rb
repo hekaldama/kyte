@@ -1,7 +1,7 @@
 class PrayerRequestsController < ApplicationController 
 
   def index
-    @person = Person.find(params[:people_id]) 
+    @person = Person.find(params[:id])
     @prayer_requests = @person.prayer_requests
   end  
 
