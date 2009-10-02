@@ -1,0 +1,21 @@
+<h1>Prayer Requests for <%= @person.first_name + " " + @person.last_name %></h1>
+<table>
+  <tr>
+  <th>Title</th>
+  <th>Body</th>
+  </tr>
+  <% for req in @prayer_requests %>
+  <tr>
+  <td><%=h req.title %></td>
+  <td><%=h req.body %></td>
+  <td><%= link_to 'Show', person_prayer_request_path(@person, req) %></td>
+  <td>
+  <%= link_to 'Edit', edit_person_prayer_request_path(@person, req) %></td>
+  <td>
+  <%= link_to 'Destroy', person_prayer_request_path(@person, req), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'New Prayer Request', new_person_prayer_request_path(@person) %>
+<%= link_to 'Back to Person', @person %>
