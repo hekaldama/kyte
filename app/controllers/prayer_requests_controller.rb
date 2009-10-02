@@ -1,8 +1,9 @@
 class PrayerRequestsController < ApplicationController 
 
   def index
-    @person = Person.find(params[:id])
-    @prayer_requests = @person.prayer_requests
+    @prayer_requests = PrayerRequest.find :all
+    #@person = Person.find(params[:people_id]) 
+    #@prayer_requests = @person.prayer_requests
   end  
 
   def show

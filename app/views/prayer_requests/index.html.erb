@@ -1,4 +1,3 @@
-<h1>Prayer Requests for <%= @person.first_name + " " + @person.last_name %></h1>
 <table>
   <tr>
   <th>Title</th>
@@ -17,5 +16,6 @@
   <% end %>
 </table>
 <br>
-<%= link_to 'New Prayer Request', new_person_prayer_request_path(@person) %>
+<%#= link_to 'New Prayer Request', new_person_prayer_request_path(@person) %>
+<%= link_to 'New Prayer Request', new_prayer_request_path %>
 <%= link_to 'Back to Person', @person %>
